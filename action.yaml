@@ -1,0 +1,25 @@
+name: 'Choreo BYOG PR Create'
+description: 'Create a new PR on user repo'
+author: WSO2
+branding:
+    icon: 'arrow-up-circle'
+    color: 'orange'
+runs:
+    using: node16
+    main: index.js
+inputs:
+    token:
+        required: true
+        description: 'The token of the user repository'
+    org:
+        required: true
+        description: 'The organization name of the user repository'
+    userRepoName:
+        required: true
+        description: 'The name of the user repository'
+    branch:
+        required: true
+        description: 'The branch of the user repository which going to push changes'
+    title:
+        required: true
+        description: 'The title of the PR'

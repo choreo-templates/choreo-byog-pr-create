@@ -1,0 +1,16 @@
+{
+  "name": "choreo-byog-pr-create",
+  "version": "1.0.0",
+  "description": "Choreo BYOR Create PR Action",
+  "main": "index.js",
+  "repository": "https://github.com/choreo-templates/choreo-byog-pr-create.git",
+  "author": "Shehanka <chamodp@wso2.com>",
+  "license": "Apache 2.0",
+  "private": true,
+  "dependencies": {
+    "@actions/core": "^1.6.0",
+    "@octokit/core": "^3.5.1",
+    "prettier": "^2.5.1"
+  },
+  "type": "module"
+}
