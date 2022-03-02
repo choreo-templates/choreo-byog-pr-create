@@ -13,7 +13,7 @@ try {
 
     githubService.createPullRequest(title, "Choreo created PR", branch, defaultBranch)
         .then((res) => {
-            console.log(`Created PR: ${res.data.html_url}`);
+            console.log(`Created PR`);
             core.setOutput('status', 'success');
         })
         .catch(e => {

@@ -21,7 +21,9 @@ class GitHubService {
                 head: head,
                 base: base
             });
-            console.log(`Created pull request: ${createPrRes.data.html_url}`);
+            console.log(`Created pull request`);
+
+            return createPrRes;
         } catch (e) {
             console.error(`Error creating pull request: ${e.message}`);
             throw e;
