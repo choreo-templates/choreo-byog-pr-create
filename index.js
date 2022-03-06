@@ -10,8 +10,9 @@ try {
     const branch = core.getInput('branch');
     const title = core.getInput('title');
     const githubService = new GitHubService(token, org, userRepoName)
+    const body = core.getInput('body');
 
-    githubService.createPullRequest(title, "Choreo created PR", branch, defaultBranch)
+    githubService.createPullRequest(title, body || "Choreo created PR", branch, defaultBranch)
         .then((res) => {
             console.log(`Created PR`);
             core.setOutput('status', 'success');
