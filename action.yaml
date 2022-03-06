@@ -23,3 +23,6 @@ inputs:
     title:
         required: true
         description: 'The title of the PR'
+    body:
+        required: true
+        description: 'The body of the PR'
