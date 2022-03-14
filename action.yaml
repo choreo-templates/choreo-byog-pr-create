@@ -26,3 +26,7 @@ inputs:
     body:
         required: true
         description: 'The body of the PR'
+    defaultBranch:
+        required: false
+        description: 'The default branch of the user repository'
+        default: 'main'

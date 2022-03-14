@@ -1,9 +1,8 @@
 import * as core from '@actions/core';
 import {GitHubService} from "./github.service.js";
 
-const defaultBranch = "main";
-
 try {
+    const defaultBranch = core.getInput('defaultBranch') || "main";
     const token = core.getInput('token');
     const org = core.getInput('org');
     const userRepoName = core.getInput('userRepoName');
