@@ -30,3 +30,7 @@ inputs:
         required: false
         description: 'The default branch of the user repository'
         default: 'main'
+    labels:
+        required: false
+        description: 'A comma separated string of labels that are needed to be added to the pull request'
+        default: ""
