@@ -25,8 +25,9 @@ class GitHubService {
 
             // add labels to the pull request
             if (labels && createPrRes) {
+                console.log(`Creating labels for pull request: ${createPrRes.data.html_url}`);
                 var labelArr = labels.split(",").map(item => item.trim());
-                await octokit.request('POST /repos/{owner}/{repo}/issues/{issue_number}/labels', {
+                await this.octokit.request('POST /repos/{owner}/{repo}/issues/{issue_number}/labels', {
                     owner: this.org,
                     repo: this.repo,
                     issue_number: createPrRes.data.number,

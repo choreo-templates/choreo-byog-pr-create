@@ -33,4 +33,3 @@ inputs:
     labels:
         required: false
         description: 'A comma separated string of labels that are needed to be added to the pull request'
-        default: ""
