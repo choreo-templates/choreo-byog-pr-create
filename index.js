@@ -16,11 +16,6 @@ try {
         .then((res) => {
             console.log(`Created PR`);
             core.setOutput('status', 'success');
-        })
-        .catch(e => {
-            core.setOutput('status', 'failure');
-            console.error(`Error: ${e}`);
-            core.setOutput('error', e.message);
         });
 } catch (e) {
     core.setOutput("choreo-byog-pr-create-status", "failed");
