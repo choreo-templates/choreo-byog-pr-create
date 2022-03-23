@@ -10,7 +10,7 @@ class GitHubService {
         });
     }
 
-    async createPullRequest(title, body, head, base) {
+    async createPullRequest(title, body, head, base, labels) {
         try {
             console.log(`Creating pull request for ${this.org}/${this.repo} with title: ${title}`);
             const createPrRes = await this.octokit.request('POST /repos/{owner}/{repo}/pulls', {
@@ -23,6 +23,17 @@ class GitHubService {
             });
             console.log(`Created pull request`);
 
+            // add labels to the pull request
+            if (labels && createPrRes) {
+                var labelArr = labels.split(",").map(item => item.trim());
+                await octokit.request('POST /repos/{owner}/{repo}/issues/{issue_number}/labels', {
+                    owner: this.org,
+                    repo: this.repo,
+                    issue_number: createPrRes.data.number,
+                    labels: labelArr,
+                });
+            }
+            
             return createPrRes;
         } catch (e) {
             console.error(`Error creating pull request: ${e.message}`);
