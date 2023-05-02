@@ -33,3 +33,10 @@ inputs:
     labels:
         required: false
         description: 'A comma separated string of labels that are needed to be added to the pull request'
+    gitProvider:
+        required: false
+        description: 'The git provider of the user repository'
+        default: 'github'
+    username:
+        required: false
+        description: 'The username of the user repository'
